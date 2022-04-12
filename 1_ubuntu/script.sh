@@ -25,7 +25,7 @@ systemctl enable monit
 echo "Turning on basic authentification"
 apt install openssl
 printf "devops:$(openssl passwd -crypt test)\n" >> /etc/monit/.htpasswd
-cat <<EOF>> /etc/monit/monitrc
+cat <<'EOF'>> /etc/monit/monitrc
 set httpd port 2812 and
      use address localhost
      allow localhost
